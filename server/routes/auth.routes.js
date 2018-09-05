@@ -12,6 +12,9 @@ const router = express.Router();
 router.get('/login', authControl.login,
   function (req, res) {
     log.info('We received a return from AzureAD.');
+   
+    res.send(res.body);
+    
     res.redirect('/');
   }
 );
@@ -22,6 +25,7 @@ router.get('/login', authControl.login,
 // redirected to '/' (home page); otherwise, it passes to the next middleware.
 router.get('/openid/return', authControl.authOpenIdReturn,
   function (req, res) {
+    log.info("redirected");
     log.info('We received a return from AzureAD.');
     res.redirect('/');
   });
@@ -33,7 +37,12 @@ router.get('/openid/return', authControl.authOpenIdReturn,
 router.post('/openid/return',
   authControl.authOpenIdReturn,
   function (req, res) {
+    log.info("redirected");
     log.info('We received a return from AzureAD.');
+    var now = new Date();
+    now.setHours(now.getHours() +1);
+    
+    res.cookie('Expiry',now.getTime().toString(),{maxAge: 3600000});
     res.redirect('/');
   });
 

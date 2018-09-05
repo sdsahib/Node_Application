@@ -18,7 +18,8 @@ exports.creds = {
   responseMode: 'form_post', 
 
   // Required, the reply URL registered in AAD for your app
-  redirectUrl: 'http://localhost:3000/auth/openid/return', 
+  // redirectUrl: 'http://localhost:4200', 
+  redirectUrl: 'http://localhost:3000/api/auth/openid/return',
 
   // Required if we use http for redirectUrl
   allowHttpForRedirectUrl: true,
