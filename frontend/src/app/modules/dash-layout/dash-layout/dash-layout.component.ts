@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DashLayoutService } from '../../services/dashlayout.service';
-import { UserCookie } from '../../services/usercookie.service';
+import { DashLayoutService } from '../../../services/dashlayout.service';
+import { UserCookie } from '../../../services/usercookie.service';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
