@@ -1,6 +1,6 @@
 var express = require('express');
 var config = require('../configs/config');
-var authControl = require('../controller/auth.control');
+var authControl = require('../controller/auth.controller');
 var bunyan = require('bunyan');
 var log = bunyan.createLogger({
   name: 'Microsoft OIDC Example Web Application'

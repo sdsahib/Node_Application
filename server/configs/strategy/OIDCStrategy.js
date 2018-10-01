@@ -36,7 +36,7 @@ module.exports = function Strategy() {
     clockSkew: config.creds.clockSkew,
   },
     function (iss, sub, profile, accessToken, refreshToken, done) {
-      console.log("hey access" + accessToken);
+      
       if (!profile.oid) {
         return done(new Error("No oid found"), null);
       }

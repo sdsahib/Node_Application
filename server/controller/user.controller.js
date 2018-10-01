@@ -1,11 +1,12 @@
 const request = require('superagent');
+const winston = require('../configs/winston');
 
 
 
 module.exports = {
     getImage: function(req,res,next){
         module.exports.getProfilePhoto(req.user.accessToken,(errPhoto, profilePhoto) =>{
-            console.log("recieved photo");
+            winston.info("recieved photo");
             res.send(profilePhoto);
         });
     },
