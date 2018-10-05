@@ -1,0 +1,3 @@
+function EmployeeSkillPlaceholderDomain(){
+    this.numberOfSkillRated ;
+}

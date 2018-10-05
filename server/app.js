@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var morgan = require('morgan');
+const mongoose = require('mongoose');
 const expressSession = require('express-session');
 // for logging
 const winston = require('./configs/winston');
@@ -15,6 +16,12 @@ var config = require('./configs/config');
 
 
 var app = express();
+const employeeSkill = require('./model/empSkill.model');
+
+mongoose.connect('mongodb://localhost:27017/Skill_Portal', function () {
+    console.log('connected');
+    
+});
 // logging
 app.use(morgan('combined', { stream: winston.stream }));
 
